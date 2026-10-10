@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f59e0b">
+<title>JASA KONGKON — Gemolong dan Sekitarnya</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/"><span class="brand-icon">JK</span><span><b>JASA KONGKON</b><small>Gemolong dan sekitarnya</small></span></a><a class="admin-link" href="/admin.html">Admin ↗</a></header>
+<main>
+<section class="hero">
+  <div class="hero-copy"><span class="eyebrow">CEPAT • PRAKTIS • TERPERCAYA</span><h1>Butuh bantuan?<br><em>Tinggal kongkon.</em></h1><p>Antar jemput, titip beli, antar barang, dan kebutuhan harian di area Gemolong dan sekitarnya.</p><a class="btn btn-dark" href="#pesan">Pesan layanan <span>→</span></a><div class="hero-points"><span>✓ Tarif transparan</span><span>✓ Bill bisa dicetak</span></div></div>
+  <div class="hero-art"><div class="sun"></div><div class="road"></div><div class="scooter"><div class="scooter-box">JK<br><small>DELIVERY</small></div><div class="handle"></div><div class="bike-body"></div><div class="wheel w1"></div><div class="wheel w2"></div></div><div class="art-tag">SIAP BANTU HARI INI</div></div>
+</section>
+<section class="section"><div class="section-heading"><div><span class="eyebrow">PILIH KEBUTUHANMU</span><h2>Layanan & tarif dasar</h2></div><p>Tarif dasar tetap. Titik tambahan Rp3.000 per tempat.</p></div><div id="services" class="service-grid"><div class="loading">Memuat layanan…</div></div></section>
+<section class="order-section" id="pesan"><div class="order-intro"><span class="eyebrow">FORM PEMESANAN</span><h2>Yuk, kirim pesananmu.</h2><p>Isi alamat dan detail pesanan dengan benar. Tarif yang muncul adalah estimasi; admin akan mengonfirmasi biaya final sebelum pekerjaan dimulai.</p><div class="info-card"><span class="info-icon">ⓘ</span><div><b>Transparan dari awal</b><p>Bill pesanan dibuat oleh sistem. Bill final mengikuti konfirmasi admin.</p></div></div><div class="support"><b>Butuh bantuan?</b><p>Hubungi admin melalui WhatsApp setelah pesanan dibuat.</p><div id="supportLinks"></div></div></div>
+<form id="orderForm" class="form-card">
+<div class="form-title"><div><span class="eyebrow">DATA PELANGGAN</span><h3>Detail pesanan</h3></div><span class="step-pill">01 / 01</span></div>
+<label>Nama pelanggan<input name="customerName" required maxlength="100" placeholder="Nama lengkap"></label>
+<label>Nomor WhatsApp<input name="phone" required maxlength="24" inputmode="tel" placeholder="Contoh: 0857xxxxxxx"></label>
+<label>Jenis layanan<select name="serviceId" id="serviceSelect" required><option value="">Pilih layanan</option></select></label>
+<div class="two-col"><label>Alamat penjemputan<textarea name="pickup" required maxlength="300" rows="2" placeholder="Alamat lengkap / patokan"></textarea></label><label>Alamat tujuan<textarea name="destination" required maxlength="300" rows="2" placeholder="Alamat tujuan"></textarea></label></div>
+<label>Jumlah titik tambahan <span class="muted">(opsional)</span><select name="extraStops" id="extraStops"><option value="0">0 titik tambahan</option><option value="1">1 titik (+Rp3.000)</option><option value="2">2 titik (+Rp6.000)</option><option value="3">3 titik (+Rp9.000)</option><option value="4">4 titik (+Rp12.000)</option><option value="5">5 titik (+Rp15.000)</option><option value="6">6 titik (+Rp18.000)</option><option value="7">7 titik (+Rp21.000)</option><option value="8">8 titik (+Rp24.000)</option><option value="9">9 titik (+Rp27.000)</option><option value="10">10 titik (+Rp30.000)</option></select></label>
+<label>Detail pesanan<textarea name="details" maxlength="700" rows="3" placeholder="Barang/menu yang dibeli, jumlah, alamat toko, dll."></textarea></label>
+<label>Catatan tambahan<textarea name="notes" maxlength="500" rows="2" placeholder="Patokan lokasi, waktu, atau catatan lain"></textarea></label>
+<div class="estimate"><div><span>Estimasi tarif</span><small id="estimateNote">Pilih layanan terlebih dahulu</small></div><strong id="estimateTotal">Rp0</strong></div>
+<button class="btn btn-primary btn-wide" type="submit" id="submitBtn">Buat pesanan <span>→</span></button><p class="fineprint">Dengan mengirim pesanan, kamu menyetujui data ini digunakan untuk memproses layanan.</p>
+</form></section>
+<section class="track-section"><div><span class="eyebrow">CEK PESANAN</span><h2>Lacak pesananmu</h2><p>Masukkan kode yang didapat setelah pesanan dibuat.</p></div><form id="trackForm" class="track-form"><input name="code" placeholder="Contoh: JK-20261010-ABC123" required><button class="btn btn-dark">Lacak</button></form><div id="trackResult"></div></section>
+</main>
+<footer><a class="brand" href="/"><span class="brand-icon">JK</span><span><b>JASA KONGKON</b><small>Gemolong dan sekitarnya</small></span></a><p>Butuh bantuan lokal? Tinggal kongkon.</p><small>© <span id="year"></span> JASA KONGKON</small></footer>
+<div class="modal-backdrop" id="billModal" hidden><div class="modal"><button class="modal-close" id="closeBill" aria-label="Tutup">×</button><div id="billContent"></div><div class="modal-actions"><button class="btn btn-outline" id="closeBill2">Tutup</button><button class="btn btn-primary" id="printBill">Cetak / Simpan PDF</button><button class="btn btn-dark" id="whatsappBill">Kirim lewat WhatsApp</button></div></div></div>
+<div id="toast" class="toast" role="status"></div>
+<script src="/app.js"></script>
+</body></html>

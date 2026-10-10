@@ -1,0 +1,16 @@
+{
+  "name": "jasa-kongkon-full",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sistem pesanan, dashboard admin, bill cetak, dan WhatsApp JASA KONGKON",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-session": "^1.18.1"
+  }
+}
