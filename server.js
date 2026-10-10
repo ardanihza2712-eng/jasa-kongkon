@@ -163,5 +163,11 @@ app.get("/api/admin/export.csv", adminOnly, (req, res) => {
   res.send("\uFEFF" + csv);
 });
 
-app.get("*", (req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
+// Frontend files are kept in the repository root for easier GitHub mobile upload.
+app.get("/style.css", (req, res) => res.sendFile(path.join(__dirname, "style.css")));
+app.get("/app.js", (req, res) => res.sendFile(path.join(__dirname, "app.js")));
+app.get("/admin.js", (req, res) => res.sendFile(path.join(__dirname, "admin.js")));
+app.get("/admin.html", (req, res) => res.sendFile(path.join(__dirname, "admin.html")));
+app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
+app.get("*", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
 app.listen(PORT, () => console.log(`JASA KONGKON berjalan di http://localhost:${PORT}`));
